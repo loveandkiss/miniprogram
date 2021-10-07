@@ -1,0 +1,5 @@
+<!-- 在这里获取token，实际上就是获取后台token -->
+<button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" >
+  获取授权
+</button>
+  
