@@ -71,4 +71,9 @@
     </view>
   </view>
   <!-- 楼层 结束 -->
+
+  <!-- <van-button loading type="info" loading-text="加载中..." />
+  <van-button type="primary">主要按钮</van-button>
+  <van-button plain type="primary">主要按钮</van-button>
+  <van-button type="info">信息按钮</van-button> -->
 </view>

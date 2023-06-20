@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/loveandkiss/miniprogram/issues"
   },
-  "homepage": "https://github.com/loveandkiss/miniprogram#readme"
+  "homepage": "https://github.com/loveandkiss/miniprogram#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.10.19"
+  }
 }
