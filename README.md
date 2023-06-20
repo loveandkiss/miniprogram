@@ -1,4 +1,4 @@
-### 工具
+## 工具
 
 #### 概览
 为了帮助开发者简单和高效地开发和调试微信小程序，我们在原有的公众号网页调试工具的基础上，推出了全新的 微信开发者工具，集成了公众号网页调试和小程序调试两种开发模式。
@@ -61,7 +61,7 @@
 
 
 
-### 判断小程序运行环境
+## 判断小程序运行环境
 
   1. 通过 __wxConfig 的属性 envVersion 来判断
       develop 开发版
@@ -122,7 +122,7 @@
   }
   ```
 
-### 项目管理
+## 项目管理
 
 ```sh
 
@@ -131,7 +131,7 @@
   git remote add origin https://github.com/loveandkiss/miniprogram.git
 
   ## 或者通过SSH密钥
-  git remote add origin git@github.com:loveandkiss/miniprogram.git 
+  git remote add origin git@github.com:loveandkiss/miniprogram.git
 
 # 将当前分支名称更改为 main
 git branch -M main
@@ -146,6 +146,42 @@ git push -u origin main
 
 
 ```
+
+
+
+## 通过 npm 引入第三方库 vant-weapp
+
+[vant-weapp](https://youzan.github.io/vant-weapp)
+
+- 安装
+  `npm i @vant/weapp -S --production`
+
+- 小程序开发工具-本地设置勾选`使用npm模块`
+
+- 小程序开发工具-工具-构建 npm
+
+可在`app.json-usingComponents` 全局引入，也可以组件内引入
+
+
+
+## 如何引入 miniprogram-ci 插件 ？？？
+- https://www.npmjs.com/package/miniprogram-ci
+
+## 引入 Fly.js 请求插件
+
+- https://www.npmjs.com/package/flyio
+
+- https://wendux.github.io/dist/#/doc/flyio/readme
+
+- 微信小程序的 javascript 运行环境和浏览器不同，页面的脚本逻辑是在JsCore中运行，JsCore是一个没有窗口对象的环境，所以不能在脚本中使用window，也无法在脚本中操作组件，JsCore中也没有 XmlhttpRequest对象，所以jquery 、zepto、axios这些在小程序中都不能用，而此时，正是 fly 大显身手的时候。
+
+- https://unpkg.com/flyio@0.6.14/dist/fly.min.js
+
+
+## 
+
+
+
 
 
 

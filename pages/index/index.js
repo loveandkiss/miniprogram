@@ -1,5 +1,6 @@
 // 0 引入 用来发送请求的 方法 一定要把路径补全
-import { request } from "../../request/index.js";
+import { request } from "../../request/index-new.js";
+// import { request } from "../../request/index.js";
 Page({
   data: {
     // 轮播图数组

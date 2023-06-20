@@ -13,16 +13,18 @@ page,view,text,swiper,swiper-item,image,navigator{
  2 原生的css和wxss也是支持 变量 
  */
  page{
-   /* 定义主题颜色 */
+  /* 定义主题颜色 */
    --themeColor:#eb4450;
-   /*
+  /*
     定义统一字体大小  假设设计稿 大小是 375px 
     1px= 2rpx
     14px = 28rpx
-     */
-     font-size: 28rpx;
+  */
+  font-size: 28rpx;
  }
 
  image{
-   width: 100%;
+  width: 100%;
  }
+
+ /* @import '@vant/weapp/common/index.wxss'; */
