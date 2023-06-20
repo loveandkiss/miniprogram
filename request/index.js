@@ -1,4 +1,5 @@
 
+import { baseURL as baseUrl } from '../config/env'
 // 同时发送异步代码的次数(并发请求)
 let ajaxTimes = 0;
 export const request = (params) => {
@@ -17,10 +18,6 @@ export const request = (params) => {
     mask: true
   });
 
-
-  // 定义公共的url
-  const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1";
-  // const baseUrl="https://api.zbztb.cn/api/public/v1";
   return new Promise((resolve,reject) => {
     wx.request({
      ...params,
