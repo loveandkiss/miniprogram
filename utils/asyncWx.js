@@ -104,6 +104,7 @@ export const login = () => {
 }
 
 /**
+ * https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=login
  * promise 形式  getUserProfile
  */
 export const getUserProfile = () => {
