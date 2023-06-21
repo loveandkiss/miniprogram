@@ -17,12 +17,12 @@ Page({
   onLoad: function (options) {
     /* 
         0 web中的本地存储和 小程序中的本地存储的区别
-          1 写代码的方式不一样了 
+          1) 写代码的方式不一样了 
             web: localStorage.setItem("key","value") localStorage.getItem("key")
-        小程序中: wx.setStorageSync("key", "value"); wx.getStorageSync("key");
-          2:存的时候 有没有做类型转换
+            小程序中: wx.setStorageSync("key", "value"); wx.getStorageSync("key");
+          2) 存的时候 有没有做类型转换
             web: 不管存入的是什么类型的数据，最终都会先调用以下 toString(),把数据变成了字符串 再存入进去
-          小程序: 不存在 类型转换的这个操作 存什么类似的数据进去，获取的时候就是什么类型
+            小程序: 不存在 类型转换的这个操作 存什么类似的数据进去，获取的时候就是什么类型
           
         1 先判断一下本地存储中有没有旧的数据
           {time:Date.now(),data:[...]}
@@ -80,6 +80,7 @@ Page({
     const res = await request({ url: "/categories" });
     // this.Cates = res.data.message;
     this.Cates = res;
+    
     // 把接口的数据存入到本地存储中
     wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
     // 构造左侧的大菜单数据

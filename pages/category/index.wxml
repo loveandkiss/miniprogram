@@ -13,6 +13,7 @@
       {{item}}
       </view>
     </scroll-view>
+    
     <!-- 右侧商品内容 -->
     <scroll-view scroll-top="{{scrollTop}}" scroll-y class="right_content">
       <view class="goods_group"

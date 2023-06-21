@@ -156,7 +156,7 @@ git push -u origin main
 - 安装
   `npm i @vant/weapp -S --production`
 
-- 小程序开发工具-本地设置勾选`使用npm模块`
+- 小程序开发工具-本地设置勾选`使用npm模块`[新的微信小程序开发工具默认使用npm模块]
 
 - 小程序开发工具-工具-构建 npm
 
@@ -178,7 +178,21 @@ git push -u origin main
 - https://unpkg.com/flyio@0.6.14/dist/fly.min.js
 
 
-## 
+## 引入 number-precision 插件
+
+```js
+
+  import NP from 'number-precision'
+  NP.strip(0.09999999999999998); // 0.1
+  NP.add(2.3, 2.6); // 4.9
+  NP.sub(1.0, 0.9); // 0.1
+  NP.multi(3, 0.3); // 0.9
+  NP.divide(0.9, 0.3); // 3
+
+```
+
+## 引入 mitt 插件
+
 
 
 

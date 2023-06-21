@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1687233365895, function(require, module, exports) {
+__DEFINE__(1687233366078, function(require, module, exports) {
 // Copyright 2010-2012 Mikeal Rogers
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
@@ -161,8 +161,8 @@ Object.defineProperty(request, 'debug', {
   }
 })
 
-}, function(modId) {var map = {"./lib/cookies":1687233365896,"./lib/helpers":1687233365897,"./request":1687233365898}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365896, function(require, module, exports) {
+}, function(modId) {var map = {"./lib/cookies":1687233366079,"./lib/helpers":1687233366080,"./request":1687233366081}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1687233366079, function(require, module, exports) {
 
 
 var tough = require('tough-cookie')
@@ -203,7 +203,7 @@ exports.jar = function (store) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365897, function(require, module, exports) {
+__DEFINE__(1687233366080, function(require, module, exports) {
 
 
 var jsonSafeStringify = require('json-stringify-safe')
@@ -272,7 +272,7 @@ exports.version = version
 exports.defer = defer
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365898, function(require, module, exports) {
+__DEFINE__(1687233366081, function(require, module, exports) {
 
 
 var http = require('http')
@@ -1827,8 +1827,8 @@ Request.defaultProxyHeaderExclusiveList =
 Request.prototype.toJSON = requestToJSON
 module.exports = Request
 
-}, function(modId) { var map = {"./lib/helpers":1687233365897,"./lib/cookies":1687233365896,"./lib/getProxyFromURI":1687233365899,"./lib/querystring":1687233365900,"./lib/har":1687233365901,"./lib/auth":1687233365902,"./lib/oauth":1687233365903,"./lib/hawk":1687233365904,"./lib/multipart":1687233365905,"./lib/redirect":1687233365906,"./lib/tunnel":1687233365907}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365899, function(require, module, exports) {
+}, function(modId) { var map = {"./lib/helpers":1687233366080,"./lib/cookies":1687233366079,"./lib/getProxyFromURI":1687233366082,"./lib/querystring":1687233366083,"./lib/har":1687233366084,"./lib/auth":1687233366085,"./lib/oauth":1687233366086,"./lib/hawk":1687233366087,"./lib/multipart":1687233366088,"./lib/redirect":1687233366089,"./lib/tunnel":1687233366090}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1687233366082, function(require, module, exports) {
 
 
 function formatHostname (hostname) {
@@ -1910,7 +1910,7 @@ function getProxyFromURI (uri) {
 module.exports = getProxyFromURI
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365900, function(require, module, exports) {
+__DEFINE__(1687233366083, function(require, module, exports) {
 
 
 var qs = require('qs')
@@ -1962,8 +1962,8 @@ Querystring.prototype.unescape = querystring.unescape
 
 exports.Querystring = Querystring
 
-}, function(modId) { var map = {"querystring":1687233365900}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365901, function(require, module, exports) {
+}, function(modId) { var map = {"querystring":1687233366083}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1687233366084, function(require, module, exports) {
 
 
 var fs = require('fs')
@@ -2170,8 +2170,8 @@ Har.prototype.options = function (options) {
 
 exports.Har = Har
 
-}, function(modId) { var map = {"querystring":1687233365900}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365902, function(require, module, exports) {
+}, function(modId) { var map = {"querystring":1687233366083}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1687233366085, function(require, module, exports) {
 
 
 var caseless = require('caseless')
@@ -2340,8 +2340,8 @@ Auth.prototype.onResponse = function (response) {
 
 exports.Auth = Auth
 
-}, function(modId) { var map = {"./helpers":1687233365897}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365903, function(require, module, exports) {
+}, function(modId) { var map = {"./helpers":1687233366080}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1687233366086, function(require, module, exports) {
 
 
 var url = require('url')
@@ -2492,7 +2492,7 @@ OAuth.prototype.onRequest = function (_oauth) {
 exports.OAuth = OAuth
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365904, function(require, module, exports) {
+__DEFINE__(1687233366087, function(require, module, exports) {
 
 
 var crypto = require('crypto')
@@ -2584,7 +2584,7 @@ exports.header = function (uri, method, opts) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365905, function(require, module, exports) {
+__DEFINE__(1687233366088, function(require, module, exports) {
 
 
 var uuid = require('uuid/v4')
@@ -2699,7 +2699,7 @@ Multipart.prototype.onRequest = function (options) {
 exports.Multipart = Multipart
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365906, function(require, module, exports) {
+__DEFINE__(1687233366089, function(require, module, exports) {
 
 
 var url = require('url')
@@ -2856,7 +2856,7 @@ Redirect.prototype.onResponse = function (response) {
 exports.Redirect = Redirect
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1687233365907, function(require, module, exports) {
+__DEFINE__(1687233366090, function(require, module, exports) {
 
 
 var url = require('url')
@@ -3034,7 +3034,7 @@ Tunnel.defaultProxyHeaderExclusiveList = defaultProxyHeaderExclusiveList
 exports.Tunnel = Tunnel
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1687233365895);
+return __REQUIRE__(1687233366078);
 })()
 //miniprogram-npm-outsideDeps=["extend","tough-cookie","json-stringify-safe","crypto","safe-buffer","http","https","url","util","stream","zlib","aws-sign2","aws4","http-signature","mime-types","caseless","forever-agent","form-data","isstream","is-typedarray","performance-now","qs","fs","har-validator","uuid/v4","oauth-sign","combined-stream","tunnel-agent"]
 //# sourceMappingURL=index.js.map

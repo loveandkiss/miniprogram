@@ -14,6 +14,8 @@ export const getSetting = () => {
   })
 }
 /**
+ * 获取用户收货地址。
+ * 调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址。
  * promise 形式  chooseAddress
  */
 export const chooseAddress = () => {

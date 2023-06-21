@@ -1,2 +1,2 @@
 
-<button type="primary" plain bindtap="weixinLogin" > 登录 </button>
+<button type="primary" plain bindtap="handleLogin" > 登录 </button>

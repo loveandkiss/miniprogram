@@ -18,7 +18,7 @@ Page({
 
       // 2 获取小程序登录成功后的code
       const { code } = await login();
-      console.log('code', code)
+      console.log('code::::', code)
       const loginParams = {
         encryptedData,
         rawData,
