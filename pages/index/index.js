@@ -1,6 +1,14 @@
 // 0 引入 用来发送请求的 方法 一定要把路径补全
 import { request } from "../../request/index-new.js";
 // import { request } from "../../request/index.js";
+
+
+// 页面中获取app实例: 获取到小程序全局唯一的 App 实例。
+const app = getApp()
+console.log('app', app)
+console.log(app.globalData)
+
+
 Page({
   data: {
     // 轮播图数组
@@ -12,7 +20,7 @@ Page({
   },
   // 页面开始加载 就会触发
   onLoad: function (options) {
-    // 1 发送异步请求获取轮播图数据  优化的手段可以通过es6的 promise来解决这个问题 
+    // 1 发送异步请求获取轮播图数据  优化的手段可以通过es6的 promise来解决这个问题
     // wx.request({
     //   url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
     //   success: (result) => {
@@ -21,11 +29,11 @@ Page({
     //     })
     //   }
     // });
-    
+
     this.getSwiperList();
     this.getCateList();
     this.getFloorList();
-      
+
   },
 
   // 获取轮播图数据

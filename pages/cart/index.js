@@ -1,12 +1,11 @@
 /*
-
 --------------购物车页面----------------
 
 
 1 获取用户的收货地址
   1 绑定点击事件
   2 调用小程序内置 api  获取用户的收货地址  wx.chooseAddress
- 
+
   2 获取 用户 对小程序 所授予 获取地址的  权限 状态 scope
     1 假设 用户 点击获取收货地址的提示框 确定  authSetting scope.address
       scope 值 true 直接调用 获取收货地址
@@ -68,6 +67,8 @@
   3 经过以上的验证 跳转到 支付页面！
  */
 
+// 精确的数值计算
+import NP from 'number-precision'
 import {
   getSetting,
   chooseAddress,
@@ -85,7 +86,7 @@ Page({
     totalNum: 0 // 总数量
   },
   onShow() {
-
+    console.log('cart----show')
     // 1 获取缓存中的收货地址信息
     const address = wx.getStorageSync("address");
 
@@ -99,7 +100,9 @@ Page({
   async handleChooseAddress() {
     try {
       // 1 获取 权限状态
+      // 用户授权设置信息
       const res1 = await getSetting();
+      // 是否授权通讯地址，已取消此项授权，会默认返回true
       const scopeAddress = res1.authSetting["scope.address"];
       // 2 判断 权限状态
       if (scopeAddress === false) {
@@ -108,7 +111,7 @@ Page({
       // 4 调用获取收货地址的 api
       let address = await chooseAddress();
       console.log('address', address)
-      
+
       address.all = address.provinceName + address.cityName + address.countyName + address.detailInfo;
 
       // 5 存入到缓存中
@@ -136,7 +139,7 @@ Page({
 
   /**
    * 设置购物车状态同时 重新计算 底部工具栏的数据 全选 总价格 购买的数量
-   * @param {Array} cart 
+   * @param {Array} cart
    */
   setCart(cart) {
     let allChecked = true;
@@ -213,12 +216,12 @@ Page({
     // 1 判断收货地址
     const {address,totalNum}=this.data;
     if(!address.userName){
-      await showToast({title:"您还没有选择收货地址"});
+      await showToast({ title: "您还没有选择收货地址" });
       return;
     }
     // 2 判断用户有没有选购商品
-    if(totalNum===0){
-      await showToast({title:"您还没有选购商品"});
+    if(totalNum === 0){
+      await showToast({ title:"您还没有选购商品" });
       return ;
     }
     // 3 跳转到 支付页面

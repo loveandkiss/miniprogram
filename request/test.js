@@ -1,3 +1,4 @@
+import { baseURL as baseUrl } from '../config/env'
 
 export const requestTest = (params) => {
   wx.showLoading({
@@ -5,7 +6,7 @@ export const requestTest = (params) => {
     mask: true
   });
   // 定义公共的url
-  const baseUrl = "http://127.0.0.1:3000/api/wxuser";
+  // const baseUrl = "http://127.0.0.1:3000/api/wxuser";
   // const baseUrl = "http://127.0.0.1:3000/weixinUser";
   return new Promise((resolve,reject) => {
     wx.request({

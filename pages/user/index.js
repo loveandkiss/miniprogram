@@ -6,6 +6,9 @@ Page({
     collectNums: 0
   },
   onShow() {
+    // Page.route
+    console.log(this.route)
+
     const userinfo = wx.getStorageSync("userinfo");
     console.log('userinfo', userinfo)
     const collect = wx.getStorageSync("collect") || [];
@@ -15,5 +18,22 @@ Page({
       collectNums: collect.length
     });
       
+  },
+  async handleClearStorage() {
+    // 清除指定缓存
+    try {
+      wx.removeStorageSync('userinfo')
+      // 刷新当前页面
+      // wx.startPullDownRefresh()
+    } catch (e) {
+      // Do something when catch error
+    }
+
+    // 或者 清除所有缓存
+    // try {
+    //   wx.clearStorageSync()
+    // } catch(e) {
+    //   // Do something when catch error
+    // }
   }
 })

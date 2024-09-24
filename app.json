@@ -68,7 +68,12 @@
     "van-field": "@vant/weapp/field/index",
     "van-picker": "@vant/weapp/picker/index",
     "van-search": "@vant/weapp/search/index"
-  }
+  },
+  "requiredPrivateInfos": [ 
+    "getLocation",
+    "chooseLocation",
+    "chooseAddress"
+  ]
 }
 
 
