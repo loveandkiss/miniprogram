@@ -1,3 +1,22 @@
+## 框架
+
+### 小程序配置
+#### 全局配置
+小程序根目录下的 app.json 文件用来对微信小程序进行全局配置。
+#### 页面配置
+app.json 中的部分配置，也支持对单个页面进行配置，可以在页面对应的 .json 文件来对本页面的表现进行配置。
+页面中配置项在当前页面会覆盖 app.json 中相同的配置项。
+
+### 框架接口
+#### 小程序App
+#### 页面
+#### 自定义组件
+#### 模块化
+#### 基础功能
+
+
+
+
 ## 工具
 
 #### 概览
@@ -377,6 +396,44 @@ git rm -r --cached miniprogram_npm
 ```
 
 然后，再提交更改。这样，它就会被忽略。
+
+
+### requiredPrivateInfos
+
+自 2022 年 7 月 14 日后发布的小程序，使用以下8个地理位置相关接口时，需要声明该字段，否则将无法正常使用。
+
+2022 年 7 月 14 日前发布的小程序不受影响。
+
+申明需要使用的地理位置相关接口，类型为数组。目前支持以下项目：
+
+getFuzzyLocation: 获取模糊地理位置
+getLocation: 获取精确地理位置
+onLocationChange: 监听实时地理位置变化事件
+startLocationUpdate: 接收位置消息（前台）
+startLocationUpdateBackground: 接收位置消息（前后台）
+chooseLocation: 打开地图选择位置
+choosePoi: 打开POI列表选择位置
+chooseAddress: 获取用户地址信息
+
+```json
+// app.json
+
+{
+  "pages": ["pages/index/index"],
+  "requiredPrivateInfos": [ 
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdateBackground",
+    "chooseAddress"
+  ]
+}
+
+```
+注：若使用以上接口，均需在小程序管理后台，「开发」-「开发管理」-「接口设置」中自助开通该接口权限。
+
+
+
+
 
 
 
