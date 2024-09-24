@@ -6,6 +6,9 @@ Page({
     collectNums: 0
   },
   onShow() {
+    // Page.route
+    console.log(this.route)
+
     const userinfo = wx.getStorageSync("userinfo");
     console.log('userinfo', userinfo)
     const collect = wx.getStorageSync("collect") || [];

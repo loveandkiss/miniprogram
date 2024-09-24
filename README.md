@@ -145,6 +145,12 @@ git push -u origin main
 密码 Password 为 github token
 
 
+
+# 查看远程仓库地址
+git remote -v
+
+
+
 ```
 
 
@@ -357,6 +363,20 @@ git push -u origin main
 
   // 这种创建方式非常类似于 自定义组件 ，可以像自定义组件一样使用 behaviors 等高级特性。
 ```
+
+
+
+### .gitignore配置忽略 miniprogram_npm，但是仍然被跟踪
+
+因为该文件夹已经被添加到版本控制中。即使在 .gitignore 中配置了忽略规则，如果文件夹在此之前已经被跟踪，Git 仍然会将其包含在内。你可以尝试使用以下命令停止跟踪该文件夹：
+
+```bash
+
+git rm -r --cached miniprogram_npm
+
+```
+
+然后，再提交更改。这样，它就会被忽略。
 
 
 
